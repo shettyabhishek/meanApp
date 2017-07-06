@@ -1,0 +1,117 @@
+/***
+	File name: _base.scss
+	Author: Abhishek H Shekara
+	Description: This is the file that has the base styles to be used across cisco application
+***/
+/** Font file reference for standard cisco fonts to be applied across the DCP application **/
+@font-face{
+	font-family:Verdana;    
+	src: url(fonts/woff/CiscoSansTTBold.woff) format("woff"),url(../fonts/ttf/CiscoSansTTBold.ttf) format("truetype");
+}
+@font-face{
+	font-family:Verdana;
+	src: url(fonts/woff/CiscoSansTTLight.woff) format("woff"),url(../fonts/ttf/CiscoSansTTLight.ttf) format("truetype");
+}
+@font-face{
+	font-family:thinCiscoFont;
+	src: url(fonts/woff/CiscoSansTTThin.woff) format("woff"),url(../fonts/ttf/CiscoSansTTThin.ttf) format("truetype");
+}
+/*@font-face{
+	font-family:$lightCiscoFont;
+	src: url(../fonts/woff/CiscoSansTTLight.woff) format("woff"),url(../fonts/ttf/CiscoSansTTLight.ttf) format("truetype");
+}*/
+@font-face{
+	font-family:exLightCiscoFont;
+	src: url(fonts/woff/CiscoSansTTExtraLight.woff) format("woff"),url(../fonts/ttf/CiscoSansTTExtraLight.ttf) format("truetype")
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+html,body{background-color: aliceblue;font-family: Verdana; font-size: 14px;}
+
+.meanApp .navbar-default{background-color: #049fd9;}
+
+/** Login / Sign up pages styles **/
+.userLogin{padding-top:0.8em;}    
+.userLogin .headerIcons{text-align: right;}
+.userLogin .headerIcons .editProfile,.userLogin .headerIcons .logout{font-size: 18px;padding-right: 0.5em;color: #ffffff;}
+.userLogin .headerIcons .editProfile i:hover{color: #343434;cursor: pointer;}
+.userLogin .headerIcons .logout i:hover{color: #343434;cursor: pointer;}
+.createAccount{border-radius: 8px;color: #fff;cursor: pointer;padding: 8px;}
+.createAccount:hover{background: #999;color: #ffffff;text-decoration: none;}
+.login{margin-top: 5em;}
+.login .spacer{height: 5px;}
+.login input[type='email'],.login input[type='password']{width: 100%;}
+.login .error{color: red;float: right;padding-right: 15px;padding-top: 5px;text-align: right;}
+.edtPrfContainer{
+	border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    margin-top: 5em;
+}
+.edtPrfContainer label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: Verdana;
+    color: #049fd9;
+}
+.edtPrfContainer .row{padding-top: 5px;padding-bottom: 5px;}
+.edtPrfContainer .glyphicon-picture{color: #f08080;cursor: pointer;font-size: 25px;}    
+.edtPrfContainer .row textarea{width: 100%;}
+.edtPrfContainer .svePrf{margin-right: 15px;}
+.viewPrfContainer{margin-top: 5em;}
+.viewPrfContainer .prfImg{border: 1px solid #dedede;box-shadow: 3px 3px 3px #dedede;height: 15em;width: 100%;}
+.viewPrfContainer .the-legend {
+	background: transparent;
+    border: none;
+    color: lightseagreen;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding-left: 1em;
+    text-align: left;
+    width: 5em;    
+}
+.viewPrfContainer .well.the-fieldset{background: #fff;border: 1px solid lightseagreen;box-shadow: 0 #000;-webkit-box-shadow: 0 #000;}
+.viewPrfContainer .content .row label{font-family: Verdana;color: #474747;}
+.viewPrfContainer .content .row .val{color: lightseagreen;}
+
+/** Post Module **/
+.userPost textarea{padding: 2px;width: 100%;}
+.userPost i.glyphicon-send{font-size: 25px;}
+.userPost .submittedPost{color: green;padding-top: 5px;}
+.allPostListing fieldset{padding-top: 5px;}
+.allPostListing fieldset .img{padding-left: 5px;}
+.allPostListing fieldset .img{height: 3.5em;width: 3.5em;}
+.allPostListing .postComment{color: lightseagreen;}
+.allPostListing .postingUser{color: #049fd9;font-family: Verdana;font-size: 12px;}
+.allPostListing .postItem{border-bottom: 1px solid #dedede;margin-bottom: 0.5em;padding-bottom: 0.5em;}
+.allPostListing .postDate{font-size: 12px;}
+.allPostListing .postLikes{color: #049fd9;font-size: 12px;margin-left: 2em;}
+.allPostListing .actionIcons{padding-left: 2px;padding-right: 2px;}
+.allPostListing .actionIcons .glyphicon{color: lightseagreen;cursor: pointer;font-size: 20px;}
+.allPostListing .actionIcons .glyphicon:hover{color: #049fd9;}
+.allPostListing .addComments{
+    background-color: #fcfcfc;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 7px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 72%;
+}
+.postComments{max-height: 10em;overflow-y: auto;}
+.allPostComments{padding:0 10px 0 10px;}
+.allPostComments li{list-style: none;}
+.allPostListing .hideComments{display: none;}
+.allPostComments .postedBy{color: #049fd9;font-size: 12px;}
+.allPostComments .postedComment{font-size: 12px;}
+
+/** Application Footer **/
+.applnFooter{background: #049fd9;color: #fff;padding: 5px;text-align: center;}
