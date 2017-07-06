@@ -1,0 +1,69 @@
+<div class='container viewPrfContainer'>
+    <div class="col-sm-8">
+    	<fieldset class="well the-fieldset">
+            <legend class="the-legend">Profile</legend>
+            <div class="row content">
+            	<div class="col-sm-8">
+            		<div class='row'>
+            			<div class='col-sm-3'><label>Name</label></div>
+            			<div class='col-sm-9 val'>{{profileObj.name}}</div>
+            		</div>
+            		<div class='row'>
+            			<div class='col-sm-3'><label>Gender</label></div>
+            			<div class='col-sm-9 val'>{{profileObj.gender}}</div>
+            		</div>
+            		<div class='row'>
+            			<div class='col-sm-3'><label>About me</label></div>
+            			<div class='col-sm-9 val'>{{profileObj.bio}}</div>
+            		</div>        		
+            	</div>
+    			<div class="col-sm-4"><img class="prfImg" src={{profileObj.profileImage}}></div>
+    		</div>	
+        </fieldset>	
+        <div class="row userPost">
+            <div class="col-sm-10" style='padding-right: 0;'>
+                <textarea ng-model="postContent" rows=2 placeholder="Add your post"></textarea>
+                <span ng-show="submittedPost" class='submittedPost'>Post submitted successfully.</span>
+            </div>
+            <div class="col-sm-2" style='padding-left: 5px;padding-right: 0;'>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="submitPost()" style="position: relative;top: 5px;">
+                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Post
+                </button>
+            </div>
+        </div>
+    </div>    
+    <div class="col-sm-4 allPostListing">  
+        <fieldset class="well the-fieldset">
+            <legend class="the-legend">Posts</legend>
+            <div class="row postItem" ng-repeat="post in allPosts">
+                <div class="col-sm-2 img">
+                    <img ng-cloak ng-src="{{post.profileImage}}" style='height: 3.5em;width: 3.5em;'>
+                </div>
+                <div class="col-sm-9">
+                    <div class='postingUser'>{{post.name}}</div>
+                    <div class='postComment'>{{post.postContent}}</div>
+                    <div>
+                        <span class='postDate' ng-bind="post.postDate | formatDate"></span>
+                        <span class='postLikes' ng-show="post.likes">Likes({{post.likes.length}})</span>
+                    </div>
+                </div>
+                <div class="col-sm-1 actionIcons">
+                    <div title="Like the post" class='glyphicon glyphicon-thumbs-up' ng-click='likeThisPost(post.userId,post._id)'></div>
+                    <div title="Add comments" class='glyphicon glyphicon-comment' ng-click='showComments($index)'></div>
+                </div>
+                <div ng-class="{hideComments: hideCommentsObj[$index] == true}">
+                    <textarea class="addComments" ng-model="userComments['cmnt'+$index]" ng-class="" rows="2">Add comments</textarea>
+                    <button style='position: relative;top: -20px;'class="btn btn-sm btn-primary" ng-click="addComments(post.userId,post._id,$index)">Comment</button>
+                    <div class='postComments customScroll'>
+                        <ul class="allPostComments"> 
+                            <li ng-repeat='postComment in post.comments'>
+                                <div class="postedBy">{{postComment.userName}}</div>
+                                <div class="postedComment">{{postComment.comment}}</div>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class='container edtPrfContainer'>
+	<div class='row'>
+		<div class='col-sm-3'><label>Upload Image</label></div>
+		<div class='col-sm-9'>
+			<div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"  ngf-accept="'image/*'"><i class='glyphicon glyphicon-picture'></i></div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-3'><label>User Name</label></div>
+		<div class='col-sm-9'><input type="text" name="Name" ng-model="loggedInUserObj.name" style="width: 100%" ng-blur="updateUserName()"></div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-3'><label>Gender</label></div>
+		<div class='col-sm-9'>
+			<bs-dropdown data-menu-type="button" select-val="selected_gender = selectedVal" preselected-item="selected_gender"
+			data-dropdown-data="gender"></bs-dropdown>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-3'><label>About U</label></div>
+		<div class='col-sm-9'><textarea rows="5" ng-model='loggedInUserObj.bio' ng-blur="updateUserBio()"></textarea></div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-12'><button ng-click='doneEditng()'>Done Editing</button></div>
+	</div>
+</div>

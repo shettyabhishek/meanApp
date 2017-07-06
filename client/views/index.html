@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app='meanApp'>
+	<head>
+		<title>My Network</title>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="dist/appStyles.css" rel="stylesheet">
+		<link href="dist/toaster.css" rel="stylesheet">
+		<link href="dist/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+	</head>
+	<body class="meanApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  	<div class="container userLogin" ng-controller='loginController'>
+		  		<div class='row' ng-show='!userLoggedIn'> 
+			  		<input type="text" ng-model="usr.email" placeholder="UserName"/>
+			  		<input type="password" ng-model="usr.password" placeholder="Password"/>
+			  		<button ng-click="validateLogin()" class='btn btn-primary'> Login </button>
+			  		<a ui-sref='signUp' class='createAccount'> Create New Account </a>		  		
+		  		</div>
+		  		<div class='row ng-cloak' ng-show='userLoggedIn'> 
+		  			<div class='col-sm-6' style='color:#ffffff;'><span>Welcome to </span><img style='height:2em;width:2em;' src='dist/images/compLogo.png'><span> MyNetwork, {{$root.userProfileObj.name}}</span></div>
+		  			<div class='col-sm-6 headerIcons'>
+	  					<a ui-sref='editProfile' class='editProfile' title='Edit Profile'><i class='glyphicon glyphicon-pencil'></i></a>
+	  					<a href="#" class='logout' title='Logout' ng-click='logOutFromApp()'><i class='glyphicon glyphicon-share'></i></a>	 
+		  			</div>
+		  		</div>
+			</div>
+		</nav>
+		<div class='container'>
+			<div ui-view></div>
+		</div>
+		<toaster-container toaster-options="{'time-out': 2000}"></toaster-container>
+
+		<footer class="navbar-fixed-bottom applnFooter">
+			All Rights Reserved. © 2017 Abhishek H Shekara 
+		</footer>
+		<script type='text/javascript' src="jquery/jquery.min.js"></script>
+		<script type='text/javascript' src="jquery/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type='text/javascript' src="bootstrap/js/bootstrap.min.js"></script>
+		<script type='text/javascript' src="angular/angular.min.js"></script>
+		<script type='text/javascript' src="angular/angular-resource.js"></script>
+		<script type='text/javascript' src="angular/angular-ui-router.js"></script>
+		<script type='text/javascript' src="fileUpload/ng-file-upload.min.js"></script>
+		<script type='text/javascript' src="fileUpload/ng-file-upload-all.min.js"></script>
+		<script type='text/javascript' src="fileUpload/ng-file-upload-shim.min.js"></script>
+
+		<!-- Other custom files -->
+		<script type='text/javascript' src="app.js"></script>
+		<script type='text/javascript' src="appConstants.js"></script>
+		<script type='text/javascript' src="toaster.js"></script>
+		<!-- directives -->
+		<script type='text/javascript' src="js/directives/bs-dropdown.js"></script>
+		<!-- services -->
+		<script type='text/javascript' src="js/services/businessServices.js"></script>
+		<!-- controllers -->
+		<script type='text/javascript' src="js/controller/loginController.js"></script>
+		<script type='text/javascript' src="js/controller/signUpController.js"></script>
+		<script type='text/javascript' src="js/controller/viewProfileController.js"></script>
+		<script type='text/javascript' src="js/controller/editProfileController.js"></script>
+	</body>
+</html>

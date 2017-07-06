@@ -1,0 +1,25 @@
+
+<div class='row login' ng-show="!userLoggedIn">
+	<div class='col-sm-6'>
+		<div class="panel panel-default">
+		  	<div class="panel-body">
+		  		<form name='createUserFrm'>
+			  		<div class='row'>
+			  			<div class='col-sm-3'><strong>Email Address: </strong></div>
+			  			<div class='col-sm-9'><input type="email" name="emailId" ng-model="newUser.emailId"></div>
+			  			<span class="error" ng-show="createUserFrm.emailId.$error.email">Not a valid email!</span>
+			  		</div>
+			  		<div class='spacer'></div>
+			  		<div class='row'>
+			  			<div class='col-sm-3'><strong>Password: </strong></div>
+			  			<div class='col-sm-9'><input type="password" ng-model="newUser.pswd"></div>
+			  		</div>
+			  		<div class='spacer'></div>
+			  		<div class='row'>
+			  			<div class='col-sm-12'><button class='pull-right btn btn-default' ng-disabled='enableCreateUser' ng-click='createUser()'>Create</button></div>
+			  		</div>	
+		  		</form>
+		  	</div>
+		</div>
+	</div>
+</div>
